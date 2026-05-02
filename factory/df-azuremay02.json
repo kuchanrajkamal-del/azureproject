@@ -1,0 +1,15 @@
+{
+	"name": "df-azuremay02",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ef736552-ae1b-48ff-89b9-8bef7a6422ae",
+		"tenantId": "cca84c20-21a8-4fea-9c26-7d9fc52a79fb"
+	}
+}
