@@ -31,7 +31,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "activity('last_cdc').outputSELECT * FROM @{pipeline().parameters.schema}.@{pipeline().parameters.table} where @{pipeline().parameters.cdc} > @{activity('last_cdc').output.firstRow.cdc}",
+							"value": "SELECT * FROM @{pipeline().parameters.schema}.@{pipeline().parameters.table} where @{pipeline().parameters.cdc} > '@{activity('last_cdc').output.value[0].cdc}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -102,14 +102,15 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "Json1",
+						"referenceName": "json_dynamic",
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "bronze",
 							"folder": "cdc",
 							"file": "cdc.json"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
