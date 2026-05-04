@@ -247,7 +247,7 @@
 									"parameters": {
 										"container": "bronze",
 										"folder": "@{pipeline().parameters.table}_cdc",
-										"file": "cdc.json"
+										"file": "empty.json"
 									}
 								}
 							],
