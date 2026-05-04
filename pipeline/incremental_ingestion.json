@@ -302,9 +302,6 @@
 			},
 			"cdc_col": {
 				"type": "string"
-			},
-			"from_date": {
-				"type": "string"
 			}
 		},
 		"variables": {
